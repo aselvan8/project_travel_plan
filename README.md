@@ -8,7 +8,7 @@ SODAPY_APPTOKEN= "API KEY HERE"
 - config_db.py
 password_db = "POSGRES DATABASE PASSWORD HERE"
 
-## Posgres SQL Database
+## PostgresSQL Database
 - create a new database called travel_data
 - run the script from location the database in Posgres (PG Admin was used for this project)
 
