@@ -40,7 +40,7 @@ def home():
     # """List all available api routes."""
     # return (
     #     f"Available Routes:<br/>"
-    #     f"/api/v1.0/notravel<br/>" #to be retired
+    #     f"/api/v1.0/month_year<br/>" #to be retired
     #     f"/api/v1.0/geomap<br/>" #to be retired
     #     f"/api/v1.0/travel_trips<br/>"
     #     f"/api/v1.0/travel_summary<br/>"
@@ -55,43 +55,48 @@ def home():
 
 
 # precipitation
-@app.route("/api/v1.0/notravel")
-def notravel():
-    session = Session(engine)
+@app.route("/api/v1.0/month_year")
+def monthyear():
+    # session = Session(engine)
 
-
-    no_travel = session.query(Travel_Details.year, Travel_Details.month, Travel_Details.state,func.avg(Travel_Details.pop_stay_at_home)).\
-    group_by(Travel_Details.year, Travel_Details.month,Travel_Details.state).\
-    order_by(Travel_Details.year, Travel_Details.state,Travel_Details.month).all()
-   
-    # no_travel = [(int(travel_tuple[0]), int(travel_tuple[1]), travel_tuple[2], round(float(travel_tuple[3]))) for travel_tuple in no_travel]
-    no_travel = [(int(no_travel_tuple[0]), int(no_travel_tuple[1]), no_travel_tuple[2], round(float(no_travel_tuple[3])))\
-             for no_travel_tuple in no_travel]
-    session.close()
+    connection = engine.connect()
+    travel_months_df = pd.read_sql("""select distinct(month_year), year, month from travel_data_details""", connection)
+    travel_months_df['month'] = travel_months_df['month'].astype('int')
+    travel_months_df.sort_values (by= ['year','month'], inplace=True, ascending=False) 
+    travel_months_json = json.dumps(travel_months_df.to_dict('records'))
+    # session.close()
 
     # no_travel = list(np.ravel(prec_data))
 
-    return jsonify(no_travel)
+    return jsonify(travel_months_json)
 
 
 # stations available
 @app.route("/api/v1.0/geomap")
 def geomap():
-    session=Session(engine)
+    # session=Session(engine)
     # query station data
-    geomap_travel = session.query(Travel_Details.year, Travel_Details.month, Travel_Details.state, Travel_Details.latitude,\
-                              Travel_Details.longitude, func.avg(Travel_Details.pop_not_stay_at_home)).\
-                              group_by(Travel_Details.year, Travel_Details.month,Travel_Details.state, \
-                              Travel_Details.latitude, Travel_Details.longitude).\
-                              order_by(Travel_Details.year, Travel_Details.state,Travel_Details.month, \
-                              Travel_Details.latitude, Travel_Details.longitude).all()
-    geomap_travel = [(int(gp_travel_tuple[0]), int(gp_travel_tuple[1]), gp_travel_tuple[2], gp_travel_tuple[3], \
-                  gp_travel_tuple[4], round(float(gp_travel_tuple[5]))) for gp_travel_tuple in geomap_travel]
-    session.close()
+    connection = engine.connect()
+    travel_geomap_df = pd.read_sql("""select year, month, month_abbr, month_year, state, 
+        round(avg(pop_stay_at_home),0) as no_travel_pop, round(avg(pop_not_stay_at_home),0) as travel_pop, 
+        round(avg(trips),0) as total_trips, round(avg(trips_5_10),0) as trips_5_10, 
+        round(avg(trips_100_250),0) as trips_100_250, round(avg(trips_500),0) as trips_500 from travel_data_details 
+        GROUP BY state, month_year, year, month, month_abbr
+        order by state, year, month, month_year, month_abbr """, connection)
+
+    travel_geomap_df['no_travel_pop'] = travel_geomap_df['no_travel_pop'].astype('int')
+    travel_geomap_df['travel_pop'] = travel_geomap_df['travel_pop'].astype('int')
+    travel_geomap_df['total_trips'] = travel_geomap_df['total_trips'].astype('int')
+    travel_geomap_df['trips_5_10'] = travel_geomap_df['trips_5_10'].astype('int')
+    travel_geomap_df['trips_100_250'] = travel_geomap_df['trips_100_250'].astype('int')
+    travel_geomap_df['trips_500'] = travel_geomap_df['trips_500'].astype('int')
+
+    travel_geomap_json = json.dumps(travel_geomap_df.to_dict('records'))
+    # session.close()
 
     # all_stations = list(np.ravel(stations_data))
 
-    return jsonify(geomap_travel)
+    return jsonify(travel_geomap_json)
 
 
 @app.route("/api/v1.0/travel_trips")
