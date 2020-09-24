@@ -9,9 +9,9 @@ SODAPY_APPTOKEN= "API KEY HERE"
 password_db = "POSGRES DATABASE PASSWORD HERE"
 
 ## PostgresSQL Database
-- create a new database called travel_data
-- run the script from location the database in Posgres (PG Admin was used for this project)
+- create a new database called "travel_data"
+- run the travel_data_sql.sql script from folder "db_script" from the "travel_data" database created above in Postgres (PG Admin was used for this project)
 
 ## Application
-- go to directory where app.py exist, and run using Python
-- launch localhost to call the index.html and visualize charts
+- go to root directory and run app.py (activate the PythonData beforehand), and it run using Python
+- once app.py is launched, open your browser and go to localhost or typically (http://127.0.0.1:5000/) to call the index.html to visualize charts
