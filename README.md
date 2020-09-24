@@ -6,7 +6,7 @@ create the following files for data extraction:
 code in file:
 SODAPY_APPTOKEN= "API KEY HERE"
 - config_db.py
-password_db = "POSGRES DATABASE PASSWORD HERE"
+password_db = "POSTGRES DATABASE PASSWORD HERE"
 
 ## PostgresSQL Database
 - create a new database called "travel_data"
