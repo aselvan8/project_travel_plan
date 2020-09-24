@@ -1,32 +1,88 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Leaflet Step-1</title>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Choropleth</title>
 
-  <!-- Leaflet CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.0-rc.3/dist/leaflet.css" />
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
+    integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+    crossorigin=""/>
 
-  <!-- Our CSS -->
-  <link rel="stylesheet" type="text/css" href="../static/css/style.css">
-</head>
-<body>
+    <!-- Our CSS -->
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+    <link rel="shortcut icon" href="#">
 
-  <!-- The div that holds our map -->
-  <div id="map"></div>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 jumbotron text-center">
+          <h1>Travel Visualization on Map</h1>
+          <p>Use the interactive visulization represented on US Map</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="well">
+            <h5>Select Month</h5>
+            <select id="selDataset" onchange="monthChanged(this.value)"></select>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="well">
+            <h5>Select Metric</h5>
+            <select id="selDataset-2">
+              <option value="total_trips">Total Trips</option>
+              <option value="no_travel_pop">People staying at Home</option>
+              <option value="travel_pop">People traveling</option>
+              <option value="trips_5_10">Trips 5 to 10 miles</option>
+              <option value="trips_100_250">Trips 100 to 250</option>
+              <option value="trips_500">Trips above 500</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Summary Info</h3>
+          </div>
+          <div id="sample-metadata" class="panel-body"></div>
+        </div>
+      </div>
+      <hr>
+      <div id="map"></div>
+    </div>
 
-  <!-- Leaflet JavaScript -->
-  <script src="https://unpkg.com/leaflet@1.0.0-rc.3/dist/leaflet.js"></script>
-  <!-- D3 JavaScript -->
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.3/d3.min.js"></script>
-  <!-- <script src = "https://d3js.org/d3.v4.min.js"></script> -->
-     <!-- API Key -->
-     <script type="text/javascript" src="../static/js/config.js"></script>
+    <!-- The div that holds our map -->
+    <div id="map"></div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+  <!-- Leaflet JS-->
+  <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
+  integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
+  crossorigin=""></script>
+
+  <!-- d3 JavaScript -->
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+
+  <!-- Leaflet-Choropleth JavaScript -->
+  <script type="text/javascript" src="../static/js/choropleth.js"></script>
+
   <!-- Our JavaScript -->
-  <script type="text/javascript" src="../static/js/logic.js"></script>
-<!-- <script type="text/javascript" src="../logic.js"></script> -->
+  <script type="text/javascript" src="../static/js/config.js"></script>
+
+  <!--GeoJSON States Data-->
+  <script type="text/javascript" src="../static/js/states.js"></script>
+
+  <script type="text/javascript" src="../static/js/map.js"></script>
 
 </body>
 </html>
