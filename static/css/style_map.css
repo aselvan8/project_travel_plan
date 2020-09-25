@@ -1,0 +1,118 @@
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #fafafa;
+  /* position: relative;
+  overflow-y: auto; */
+}
+
+/*set navbar text color to white  */
+.navbar-brand{
+  color:#fff !important;
+}
+
+.nav-link {
+  color: #fff !important;
+}
+
+/* navbar styling */
+.navbar-light{
+  background-color:#444;
+  }
+
+/* scroll feature */
+html {
+  scroll-behavior: smooth;
+}
+
+/* row class padding  */
+.row{
+  padding-top:0px;
+  padding-bottom: 20px;
+  }
+
+#map {
+  height: 400px;
+}
+
+On mouse hover, lighten state color */
+/* path:hover {
+	fill-opacity: .7;
+}
+
+.leaflet-popup-content {
+  text-align: center;
+}
+
+/* CSS from the Leaflet-Choropleth documentation */
+.legend {
+  padding: 6px 8px;
+  font: 12px Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: #555;
+  background: #fff;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.legend ul {
+  padding: 0;
+  margin: 0;
+  clear: both;
+  list-style-type: none;
+}
+
+.legend li {
+  display: inline-block;
+  width: 30px;
+  height: 22px;
+}
+
+.legend .min {
+  float: left;
+  padding-bottom: 5px;
+}
+
+.legend .max {
+  float: right;
+}
+
+h1 {
+  text-align: left;
+}
+
+
+/* small screen adjustments*/
+@media(max-width:800px) {
+
+  #navbarSupportedContent {
+      display: block;
+  }
+
+  #map {
+      /* top: 172px; */
+      height: 600px
+  }
+
+  /* .subtitle {
+      height: 36px;
+      font-size: 85%;
+  } */
+}
+
+@media(max-width:500px) {
+  .thumbnail{
+      width: 40%
+  }
+
+  #map {
+      
+      height: 250px
+  }
+
+  /* .subtitle {
+      height: 36px;
+      font-size: 65%;
+  } */
+}
