@@ -320,11 +320,11 @@ function getmonth(month) {
                 // if (month != "Jan-2019") {
                 // document.getElementById("info legend leaflet-control").remove();
                 // }
-                var legend_1;
-
-                if(legend_1 instanceof L.control){map1.removeControl(legend_1);};
+                
+                d3.selectAll("div.info.legend.leaflet-control").html("");
+                // if(legend_1 instanceof L.control){map1.removeControl(legend_1);};
                 // Set up the legend
-                legend_1 = L.control({ position: "bottomright" });
+                var legend_1 = L.control({ position: "bottomright" });
                 legend_1.onAdd = function() {
                     var div = L.DomUtil.create("div", "info legend");
                     var limits = geojson_1.options.limits;
