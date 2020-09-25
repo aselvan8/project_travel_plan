@@ -20,6 +20,7 @@ L.tileLayer("https://api.mapbox.com/styles/v1/mapbox/{id}/tiles/{z}/{x}/{y}?acce
 // Load in geojson data, link for GeoJSON US States is from https://eric.clst.org/tech/usgeojson/
 var geoData = "static/data/gz_2010_us_040_00_5m.json";
 var jsonData = "/api/v1.0/travel_trips";
+var monthDropdown = "/api/v1.0/month_year";
 
 var geojson;
 var metricinfo;
@@ -44,14 +45,23 @@ function init() {
         var dropdown = d3.select('#selDataset');
         // .data(d3.map(data, data.month_year).keys()).enter();
 
-        // for(var i=0; i < data.length; i++) {
-        //     months = data[i].month_year;
-        //     console.log(months);
-        // }
+        for(var i=0; i < data.length; i++) {
+            months = data[i].month_year;
+            console.log(months);
+        }
+
+        var unique = [];
 
         data.forEach(function(month) {
-            dropdown.append("option").text(month.month_year).attr("value",month.month_year);
+            if(unique.includes(month.month_year)) {
+
+            }
+            else {
+                unique.push(month.month_year);
+                dropdown.append("option").text(month.month_year).attr("value",month.month_year);
+            }
         });
+        // console.log(unique);
         getmonth(data[0].month_year);
         metricinfo = "Total Trips";
         // metricData = "total_trips"
@@ -124,6 +134,9 @@ function getmonth(month) {
                     break;
             }
 
+            var x = document.getElementsByClassName("info legend leaflet-control");
+            x.innerHTML = '';
+
             geojson = L.choropleth(statesData, {
 
                 // Define what  property in the features to use
@@ -150,6 +163,10 @@ function getmonth(month) {
                     ${feature.properties.total_trips}`);
                 }
             }).addTo(myMap);
+
+            // legend.remove(myMap);
+            // legend.removeFrom(myMap);
+            // myMap.removeControl(legend);
 
             // Set up the legend
             var legend = L.control({ position: "bottomright" });
