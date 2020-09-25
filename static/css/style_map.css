@@ -31,7 +31,13 @@ html {
   padding-bottom: 20px;
   }
 
-#map {
+#map,
+#map_1,
+#map_2,
+#map_3,
+#map_4,
+#map_5,
+#map_6 {
   height: 400px;
 }
 
@@ -90,7 +96,13 @@ h1 {
       display: block;
   }
 
-  #map {
+#map,
+#map_1,
+#map_2,
+#map_3,
+#map_4,
+#map_5,
+#map_6 {
       /* top: 172px; */
       height: 600px
   }
@@ -106,11 +118,16 @@ h1 {
       width: 40%
   }
 
-  #map {
-      
+  #map,
+#map_1,
+#map_2,
+#map_3,
+#map_4,
+#map_5,
+#map_6 {
+
       height: 250px
   }
-
   /* .subtitle {
       height: 36px;
       font-size: 65%;
