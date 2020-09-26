@@ -1,5 +1,5 @@
 // @TODO: YOUR CODE HERE!
-var svgWidth = 1000;
+var svgWidth = 1200;
 var svgHeight = 500;
 
 var margin = {
@@ -105,11 +105,11 @@ function chart(selectedYear) {
 
         // Step 2: Create "mouseover" event listener to display tooltip
         circlesGroup.on("mouseover", function (d) {
-            var population = (d.trips_500 / d.travel_pop)*100
+            var population = ((d.trips_500 / d.travel_pop)*100).toFixed(2)
             toolTip.style("display", "block")
                 .html(
                     `<strong>${d.state}</strong>
-                     <p>${population}</p>
+                     <p>${population} %</p>
                      <p>Trips by Population</p>`)
                 .style("left", d3.event.pageX + "px")
                 .style("top", d3.event.pageY + "px");
