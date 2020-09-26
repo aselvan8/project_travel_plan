@@ -51,7 +51,7 @@ def home():
 # # this is to call the index.html - place it when html is ready
 # def home():
 #     mars_data = mongo.db.collection.find_one()
-    return render_template('index.html')
+    return render_template('index_scatter.html')
 
 
 # precipitation
@@ -135,13 +135,20 @@ def traveltrips():
 @app.route("/api/v1.0/travel_summary")
 def travelsummary():
     connection = engine.connect()
-    travel_summary_df = pd.read_sql("""select year, month, month_abbr, month_year, state, latitude, longitude,
-        round(avg(pop_stay_at_home),0) as no_travel_pop, round(avg(pop_not_stay_at_home),0) as travel_pop from travel_data_details 
-        GROUP BY state, month_year, year, month, month_abbr, latitude, longitude
-        order by state, year, month, month_year, month_abbr """, connection)
+    # travel_summary_df = pd.read_sql("""select year, month, month_abbr, month_year, state, latitude, longitude,
+    #     round(avg(pop_stay_at_home),0) as no_travel_pop, round(avg(pop_not_stay_at_home),0) as travel_pop from travel_data_details 
+    #     GROUP BY state, month_year, year, month, month_abbr, latitude, longitude
+    #     order by state, year, month, month_year, month_abbr """, connection)
+
+    travel_summary_df = pd.read_sql("""select year, state, state_code, latitude, longitude,
+        round(avg(pop_stay_at_home),0) as no_travel_pop, round(avg(pop_not_stay_at_home),0) as travel_pop,
+        round(avg(trips_500),0) as trips_500 from travel_data_details 
+        GROUP BY year, state, state_code, latitude, longitude
+        order by year """, connection)
 
     travel_summary_df['no_travel_pop'] = travel_summary_df['no_travel_pop'].astype('int')
     travel_summary_df['travel_pop'] = travel_summary_df['travel_pop'].astype('int')
+    travel_summary_df['trips_500'] = travel_summary_df['trips_500'].astype('int')
 
     travel_summary_json = json.dumps(travel_summary_df.to_dict('records'))
     # session.close()
