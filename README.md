@@ -2,28 +2,32 @@
 
 - Run command "pip install sodapy" on your python instance
 
-Nagivate to the link below and in section "App Tokens", click on the button "Sign up for an app Token!"
+- Nagivate to the link below and in section "App Tokens", click on the button "Sign up for an app Token!"
 https://dev.socrata.com/foundry/data.bts.gov/w96p-f2qv
 
-On the following screen, click on "Sign up" and enter your information as follow:
--email address:
--Name
--password, and confirm your password
+- On the following screen, click on "Sign up" and enter your information as follow:
+* email address:
+* Name
+* password, and confirm your password
+* Accept the license agreement
 
-Accept the license agreement
+- Next, under App Tokens section, click on "Create New App Token"
+* When the window pops up, fill the information requested such as:
+* application name
+* description
+* Save it
 
-Next, under App Tokens section, click on "Create New App Token"
-When the window pops up, fill the information requested such as:
--application name
--description
-
-Save it
-
--Note: you can use the link below to review and retrieve the token
+- Note: you can use the link below to review and retrieve the token
 https://data.bts.gov/profile/edit/developer_settings
 
-Once saved the form, your APP Token will be created. Copy the token generated and follow below steps.
+- Once saved the form, your APP Token will be created. Copy the token generated and follow below steps.
 
+## Java Script
+
+- Register for a mapbox code in order to retrive the geomap from below's link:
+https://account.mapbox.com/access-tokens/
+
+- Create a config.js file and place under static\js
 
 ## Jupyter Notebook
 create the following files for data extraction:
@@ -44,3 +48,5 @@ password_db = "POSTGRES DATABASE PASSWORD HERE -- this is your own database pass
 - go to root directory and run app.py (activate the PythonData beforehand), and it run using Python
 - once app.py is launched, navigate to the folder templates/index.html and start the Live server
 - Step above will launch your browser and go to localhost or typically (http://127.0.0.1:5000/) to navigate through the website and visualizations
+ 
+
