@@ -1,0 +1,93 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper{
+    width: 1170px;
+    margin: auto;
+}
+
+header{
+    background: 
+    linear-gradient(to bottom, rgba(211, 212, 221, 0.52), rgba(0, 0, 0, 0.73)),
+    url(../images/Rail-yard.jpg);
+    height: 75vh;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+
+
+}
+.nav-area{
+    float: right;
+    list-style: none;
+    margin-top: 30px;
+}
+
+.nav-area li{
+    display: inline-block;
+}
+
+.nav-area li a{
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 17px;
+}
+
+.nav-area li a:hover{
+    background: #000;
+    color: rgb(167, 167, 167);
+}
+
+.logo img{
+    width: 70px;
+    float: left;
+    height: auto;
+    padding-top: 20px;
+    padding-left: 20px;
+}
+
+.welcome-text{
+    position: absolute;
+    width: 800px;
+    height: 300px;
+    margin: 15% 23%;
+    text-align: center;
+}
+
+.welcome-text h1{
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 70px;
+}
+
+.welcome-text a{
+    border: 1px solid #fff;
+    padding: 10px 15px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 14px;
+    margin-top: 15px;
+    display: inline-block;
+    color: #fff;
+
+}
+
+.welcome-text a:hover{
+    background: #fff;
+    color: #333;
+}
+
+.about-section {
+    padding: 20px;
+    text-align: justify;
+    background-color: #474e5d;
+    color: white;
+  }
+.about-section h1 {
+    text-align: center;
+}

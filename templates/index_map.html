@@ -11,20 +11,37 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
       integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
       crossorigin=""/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
     
     <!-- Our CSS -->
-    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/style_map.css">
     <link rel="shortcut icon" href="#">
 
   </head>
   <body>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12 jumbotron text-center">
-          <h1>Travel Visualization on Map</h1>
-          <p>Use the interactive visulization represented on US Map</p>
-        </div>
+    <header>
+      <div class="wrapper">
+          <div class="logo">
+              <a href="index.html"><img src="../static/images/home.png" alt=""></a>
+          </div>
+          <ul class="nav-area">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="aboutpage.html">About</a></li>
+            <li><a href="our_data.html">Our Data</a></li>
+            <li><a href="index_charts.html">Impact on Trips</a></li>
+            <li><a href="index_scatter.html">Trips by Population</a></li>
+            <li><a href="index_map.html">GeoMap Metrics</a></li>
+          </ul>
       </div>
+      </header>
+
+    <div class="about-section">
+      <h2>GeoMap Metrics</h2>
+      <h4>Travel Visualization on Map</h4>
+      <p>Representing key metrics showing impact on travel within the US due to COVID-19</p>
+  </div>
+    
       <div class="row">
         <div class="col-md-4">
           <div class="well">
@@ -33,49 +50,41 @@
           </div>
         </div>
       </div>
-      <!-- <div class="row">
-        <div class="col-md-4">
-          <div class="well">
-            <h5>Select Metric</h5>
-            <select id="selDataset-2" >
-              <option value="total_trips">Total Trips</option>
-              <option value="no_travel_pop">People staying at Home</option>
-              <option value="travel_pop">People traveling</option>
-              <option value="trips_5_10">Trips 5 to 10 miles</option>
-              <option value="trips_100_250">Trips 100 to 250</option>
-              <option value="trips_500">Trips above 500</option>
-            </select>
-          </div>
-        </div>
-      </div> -->
+
       <hr>
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-12">
+          <h4>Total Trips</h4>
           <div id="map_1"></div>
         </div>
       </div>
       <div class="row">
         <div class="col-md-12">
+          <h4>Population Staying Home</h4>
           <div id="map_2"></div>
         </div>
       </div>
       <div class="row">
         <div class="col-md-12">
+          <h4>Population Traveling</h4>
           <div id="map_3"></div>
         </div>
       </div>
       <div class="row">
         <div class="col-md-12">
+          <h4>Trips Between 5-10 Miles</h4>
           <div id="map_4"></div>
         </div>
       </div>
       <div class="row">
         <div class="col-md-12">
+          <h4>Trips Between 100-250 Miles</h4>
           <div id="map_5"></div>
         </div>
       </div>
       <div class="row">
         <div class="col-md-12">
+          <h4>Trips Above 500 Miles</h4>
           <div id="map_6"></div>
         </div>
       </div>

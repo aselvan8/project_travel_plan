@@ -1,0 +1,145 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper{
+    width: 1170px;
+    margin: auto;
+}
+
+.nav-area{
+    float: right;
+    list-style: none;
+    margin-top: 30px;
+}
+
+.nav-area li{
+    display: inline-block;
+}
+
+.nav-area li a{
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 17px;
+}
+
+.nav-area li a:hover{
+    background: #000;
+    color: rgb(167, 167, 167);
+}
+
+.logo img{
+    width: 70px;
+    float: left;
+    height: auto;
+}
+
+
+.about-section {
+    padding: 100px;
+    text-align: center;
+    background-color: #474e5d;
+    color: white;
+    height: 100px;
+  }
+
+ 
+  @media screen and (max-width: 600px) {
+    .column {
+      width: 50%;
+      display: block;
+      align-items: center;
+    }
+  }
+  
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  .logo img{
+    width: 70px;
+    float: left;
+    height: auto;
+    padding-top: 20px;
+    padding-left: 20px;
+  }
+
+ 
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+  }
+  
+  html {
+    box-sizing: border-box;
+  }
+  
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  
+  .column {
+    float: left;
+    width: 50%;
+    margin-bottom: 16px;
+    padding: 0 8px;
+    padding-left: 50px;
+    text-align: center;
+  }
+  
+  .card {
+    box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin: 8px;
+    align-items: center;
+  }
+  
+  .container {
+    padding: 0 16px;
+  }
+  
+  .container::after, .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  .title {
+    color: grey;
+  }
+  
+  
+  @media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+    }
+  }
+  
+  .img {
+    height: 50px;
+    width: auto;
+  }
+
+/* Style buttons */
+.btn {
+    background-color: DodgerBlue;
+    border: none;
+    color: white;
+    padding: 12px 30px;
+    cursor: pointer;
+    font-size: 20px;
+  }
+  
+  /* Darker background on mouse-over */
+  .btn:hover {
+    background-color: RoyalBlue;
+  }
+
+  .access {
+      text-align: center;
+      padding-left: 100px;
+  }

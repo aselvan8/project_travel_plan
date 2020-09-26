@@ -85,7 +85,7 @@ const scaleControl = (map) => {
 
 // Load in geojson data, link for GeoJSON US States is from https://eric.clst.org/tech/usgeojson/
 var geoData = "static/data/gz_2010_us_040_00_5m.json";
-var jsonData = "/api/v1.0/travel_trips";
+var jsonData = "http://127.0.0.1:5000/api/v1.0/travel_trips";
 var monthDropdown = "/api/v1.0/month_year";
 
 function init() {
@@ -171,7 +171,7 @@ function getmonth(month) {
                     valueProperty: "no_travel_pop",
 
                     // Set color scale
-                    scale: ["#ffffb2", "#b10026"],
+                    scale: ["ffffe0", "#00429d"],
 
                     // Number of breaks in step range
                     steps: 12,
@@ -187,7 +187,7 @@ function getmonth(month) {
 
                     // Binding a pop-up to each layer
                     onEachFeature: function(feature, layer) {
-                        layer.bindPopup(`State: ${feature.properties.name} <br> Pop stay at home:
+                        layer.bindPopup(`State: ${feature.properties.name} <br> Population at Home:
                         ${feature.properties.no_travel_pop}`);
                     }
                 }).addTo(map2);
@@ -199,7 +199,7 @@ function getmonth(month) {
                     valueProperty: "travel_pop",
 
                     // Set color scale
-                    scale: ["#ffffb2", "#b10026"],
+                    scale: ["#e6ffe6", "#009900"],
 
                     // Number of breaks in step range
                     steps: 12,
@@ -215,7 +215,7 @@ function getmonth(month) {
 
                     // Binding a pop-up to each layer
                     onEachFeature: function(feature, layer) {
-                        layer.bindPopup(`State: ${feature.properties.name} <br> Pop Traveling:
+                        layer.bindPopup(`State: ${feature.properties.name} <br> Population Traveling:
                         ${feature.properties.travel_pop}`);
                     }
                 }).addTo(map3);
@@ -226,7 +226,7 @@ function getmonth(month) {
                     valueProperty: "trips_5_10",
 
                     // Set color scale
-                    scale: ["#ffffb2", "#b10026"],
+                    scale: ["#ffffcc", "#ff9900"],
 
                     // Number of breaks in step range
                     steps: 12,
@@ -253,7 +253,7 @@ function getmonth(month) {
                     valueProperty: "trips_100_250",
 
                     // Set color scale
-                    scale: ["#ffffb2", "#b10026"],
+                    scale: ["#f2ccff", "#4d0066"],
 
                     // Number of breaks in step range
                     steps: 12,
@@ -280,7 +280,7 @@ function getmonth(month) {
                     valueProperty: "trips_500",
 
                     // Set color scale
-                    scale: ["#ffffb2", "#b10026"],
+                    scale: ["#ffb3ff",  "#b30047"],
 
                     // Number of breaks in step range
                     steps: 12,
@@ -332,8 +332,7 @@ function getmonth(month) {
                     var labels = [];
 
                         // Add min & max
-                    var legendInfo_1 = "<h1>Total Trips</h1>" +
-                    "<div class=\"labels\">" +
+                    var legendInfo_1 = "<div class=\"labels\">" +
                         "<div class=\"min\">" + limits[0] + "</div>" +
                         "<div class=\"max\">" + limits[limits.length - 1] + "</div>" +
                         "</div>";
@@ -357,8 +356,7 @@ function getmonth(month) {
                     var labels = [];
 
                         // Add min & max
-                    var legendInfo_2 = "<h1>Pop stay at home</h1>" +
-                    "<div class=\"labels\">" +
+                    var legendInfo_2 = "<div class=\"labels\">" +
                         "<div class=\"min\">" + limits[0] + "</div>" +
                         "<div class=\"max\">" + limits[limits.length - 1] + "</div>" +
                         "</div>";
@@ -382,8 +380,7 @@ function getmonth(month) {
                     var labels = [];
 
                         // Add min & max
-                    var legendInfo_3 = "<h1>Pop Traveling</h1>" +
-                    "<div class=\"labels\">" +
+                    var legendInfo_3 = "<div class=\"labels\">" +
                         "<div class=\"min\">" + limits[0] + "</div>" +
                         "<div class=\"max\">" + limits[limits.length - 1] + "</div>" +
                         "</div>";
@@ -407,8 +404,7 @@ function getmonth(month) {
                     var labels = [];
 
                         // Add min & max
-                    var legendInfo_4 = "<h1>Trips between 5-10 miles</h1>" +
-                    "<div class=\"labels\">" +
+                    var legendInfo_4 = "<div class=\"labels\">" +
                         "<div class=\"min\">" + limits[0] + "</div>" +
                         "<div class=\"max\">" + limits[limits.length - 1] + "</div>" +
                         "</div>";
@@ -432,8 +428,7 @@ function getmonth(month) {
                     var labels = [];
 
                         // Add min & max
-                    var legendInfo_5 = "<h1>Trips between 100-250 miles</h1>" +
-                    "<div class=\"labels\">" +
+                    var legendInfo_5 = "<div class=\"labels\">" +
                         "<div class=\"min\">" + limits[0] + "</div>" +
                         "<div class=\"max\">" + limits[limits.length - 1] + "</div>" +
                         "</div>";
@@ -457,8 +452,7 @@ function getmonth(month) {
                     var labels = [];
 
                         // Add min & max
-                    var legendInfo_6 = "<h1>Trips above 500 miles</h1>" +
-                    "<div class=\"labels\">" +
+                    var legendInfo_6 = "<div class=\"labels\">" +
                         "<div class=\"min\">" + limits[0] + "</div>" +
                         "<div class=\"max\">" + limits[limits.length - 1] + "</div>" +
                         "</div>";

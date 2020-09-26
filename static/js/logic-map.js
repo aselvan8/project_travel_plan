@@ -32,7 +32,7 @@ var myMap = L.map("map", {
   // };
 
   // Load in geojson data, link for GeoJSON US States is from https://eric.clst.org/tech/usgeojson/
-  var geoData = "static/data/gz_2010_us_040_00_5m.json";
+  var geoData = "../static/data/gz_2010_us_040_00_5m.json";
 
   var geojson;
 

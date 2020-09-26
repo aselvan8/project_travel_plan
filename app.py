@@ -51,7 +51,7 @@ def home():
 # # this is to call the index.html - place it when html is ready
 # def home():
 #     mars_data = mongo.db.collection.find_one()
-    return render_template('index_scatter.html')
+    return render_template('index.html')
 
 
 # precipitation
