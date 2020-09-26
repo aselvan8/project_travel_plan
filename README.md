@@ -22,13 +22,6 @@ https://data.bts.gov/profile/edit/developer_settings
 
 - Once saved the form, your APP Token will be created. Copy the token generated and follow below steps.
 
-## Java Script
-
-- Register for a mapbox code in order to retrive the geomap from below's link:
-https://account.mapbox.com/access-tokens/
-
-- Create a config.js file and place under static\js
-
 ## Jupyter Notebook
 create the following files for data extraction:
 - config.py >> create this file and place it under python_code folder
@@ -42,6 +35,17 @@ password_db = "POSTGRES DATABASE PASSWORD HERE -- this is your own database pass
 ## PostgresSQL Database
 - create a new database called "travel_data"
 - run the travel_data_sql.sql script from folder "db_script" from the "travel_data" database created above in Postgres (PG Admin was used for this project)
+
+
+
+## Java Script
+
+- Register for a mapbox code in order to retrive the geomap from below's link:
+https://account.mapbox.com/access-tokens/
+
+- Create a config.js file and place under static\js
+
+
 
 ## Application
 - make sure the PGAdmin Postgres is running
