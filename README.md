@@ -58,7 +58,7 @@ https://account.mapbox.com/access-tokens/
 Sample code:
 * var API_KEY = "ADD YOUR TOKEN HERE"
 
-### Application
+### How to Run this Application?
 - make sure the Postgres PGAdmin  is running
 - make sure the Chrome extension installed above is turned ON
 - from Visual Studio, source activate PythonData then go to root directory and run app.py
