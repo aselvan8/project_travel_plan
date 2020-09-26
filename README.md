@@ -40,5 +40,7 @@ password_db = "POSTGRES DATABASE PASSWORD HERE -- this is your own database pass
 - run the travel_data_sql.sql script from folder "db_script" from the "travel_data" database created above in Postgres (PG Admin was used for this project)
 
 ## Application
+- make sure the PGAdmin Postgres is running
 - go to root directory and run app.py (activate the PythonData beforehand), and it run using Python
-- once app.py is launched, open your browser and go to localhost or typically (http://127.0.0.1:5000/) to call the index.html to visualize charts
+- once app.py is launched, navigate to the folder templates/index.html and start the Live server
+- Step above will launch your browser and go to localhost or typically (http://127.0.0.1:5000/) to navigate through the website and visualizations
