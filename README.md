@@ -65,4 +65,12 @@ Sample code:
 - once app.py is launched, navigate to the folder templates/index.html and start the Live server
 - step above will launch your browser and go to localhost or typically (http://127.0.0.1:5000/) to navigate through the website and visualizations
  
-
+### Data Sources and library
+- Bureau of Transportation Statistics: https://data.bts.gov/Research-and-Statistics/Trips-by-Distance/w96p-f2qv
+- Latitudes and Longitudes of US States: https://inkplant.com/code/state-latitudes-longitudes
+- State Abbreviations and State Postal Codes: https://www.factmonster.com/us/postal-information/state-abbreviations-and-state-postal-codes
+- US States Boundaries: https://leafletjs.com/examples/choropleth/us-states.js
+- LeafletJS:https://leafletjs.com/reference-1.7.1.html
+- Chart.js Library: https://www.chartjs.org/
+- D3.js: https://d3js.org/
+- Bootstrap: https://getbootstrap.com/
