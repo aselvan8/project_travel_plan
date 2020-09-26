@@ -56,13 +56,13 @@ https://account.mapbox.com/access-tokens/
 
 - Once the token is created, navigate \static\js and create a config.js file and add the following to the file:
 Sample code:
-var API_KEY = "ADD YOUR TOKEN HERE"
+* var API_KEY = "ADD YOUR TOKEN HERE"
 
 ### Application
 - make sure the Postgres PGAdmin  is running
 - make sure the Chrome extension installed above is turned ON
 - from Visual Studio, source activate PythonData then go to root directory and run app.py
 - once app.py is launched, navigate to the folder templates/index.html and start the Live server
-- Step above will launch your browser and go to localhost or typically (http://127.0.0.1:5000/) to navigate through the website and visualizations
+- step above will launch your browser and go to localhost or typically (http://127.0.0.1:5000/) to navigate through the website and visualizations
  
 
