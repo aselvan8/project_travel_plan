@@ -34,13 +34,13 @@ create the following files for data extraction:
 sample code in file:
 SODAPY_APPTOKEN= "API KEY HERE -- this is APP Token created above"
 
-- config_db.py >> create this file and place it under python_code folder, and under the root folder where app.py resides
+- config_db.py >> create this file and place it under /python_code folder, and under the root folder where app.py resides
 sample code in file
 password_db = "POSTGRES DATABASE PASSWORD HERE -- this is your own database password"
 
 ### PostgresSQL Database
 - create a new database called "travel_data"
-- run the travel_data_sql.sql script from folder "db_script" from the "travel_data" database created above in Postgres (PG Admin was used for this project)
+- run the travel_data_sql.sql script from folder /db_script from the "travel_data" database created above in Postgres (PG Admin was used for this project)
 
 ### Exception note for retrieving data using Flask and Live Server (CHROME)
 
@@ -54,7 +54,7 @@ Please install this extension and turn it ON.
 - Register for a MapBox token in order to retrive the GeoMap. Here's the link to register and obtain a token.
 https://account.mapbox.com/access-tokens/
 
-- Once the token is created, navigate \static\js and create a config.js file and add the following to the file:
+- Once the token is created, navigate /static/js and create a config.js file and add the following to the file:
 Sample code:
 * var API_KEY = "ADD YOUR TOKEN HERE"
 
